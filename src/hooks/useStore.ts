@@ -1,6 +1,7 @@
+// this is one reducer 
 import { useReducer } from "react"
-import { type Action, type State } from "../types/types"
-import { type FromLanguage, type Language } from "../types/types"
+import { type Action, type State } from "../types/languages"
+import { type FromLanguage, type Language } from "../types/languages"
 import { AUTO_LANGUAGE } from "../constants"
 
 // 1. create a initialState
