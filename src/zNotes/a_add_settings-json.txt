@@ -1,0 +1,6 @@
+ "editor.codeActionsOnSave":{
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit",
+        "source.fixAll.eslint": "explicit"
+},
+// esto lo sguiere el vscode
