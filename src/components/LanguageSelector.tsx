@@ -1,7 +1,8 @@
-import Form from 'react-bootstrap/Form';
+import { Form } from 'react-bootstrap/Form';
 import { AUTO_LANGUAGE, SUPPORTED_LANGUAGES } from '../constants';
-import { type FC } from 'react';
+//import { type FC } from 'react';
 import { type Language, type FromLanguage, SectionType } from '../types/languages.d';
+import { React } from 'react'
 
 // ejemplo de tipar las props
 // interface Props {
@@ -15,15 +16,13 @@ type Props =
 // EXAMPLE 2
 // const numbers: Array<number> = [1,2,3]
 
-export const LanguageSelector: FC<Props> = ({ onChange, type, value }) => {
-  
+export const LanguageSelector = ({ onChange, type, value }: Props) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onChange(event.target.value as Language)
   }
-
   return (
     <Form.Select aria-label='Selecciona el idioma' onChange={handleChange} value={value}>
-      {type===SectionType.From && <option value={AUTO_LANGUAGE}>Detectar Idioma</option>}
+      {type === SectionType.From && <option value={AUTO_LANGUAGE}>Detectar Idioma</option>}
       {Object.entries(SUPPORTED_LANGUAGES).map(([key, literal]) => (
         <option key={key} value={key}>
           {literal}
